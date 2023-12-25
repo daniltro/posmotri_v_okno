@@ -130,19 +130,17 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  position: relative;
-  display: block;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   outline: 1px solid #fff;
   cursor: pointer;
   inline-size: 19px;
   block-size: 19px;
 }
 
-input[type="checkbox"]:checked + span::before {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: "";
-  position: absolute;
-  top: 8%;
-  left: 8%;
   background-color: #fff;
   block-size: 15px;
   inline-size: 15px;
@@ -155,6 +153,7 @@ input[type="checkbox"]:checked + span::before {
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
+  padding-bottom: 4px;
 }
 
 .search-form__checkbox-list .search-form__label:hover {
@@ -228,15 +227,14 @@ input[type="checkbox"]:checked + span::before {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  overflow-x: hidden;
-  block-size: 294px;
-  inline-size: 405px;
+  block-size: 298px;
+  inline-size: 100%;
 }
 
 .content__list-item {
-  inline-size: 100%;
-  block-size: 100%;
-  margin-bottom: 25px;
+  inline-size: 394px;
+  block-size: 107px;
+  margin-bottom: 30px;
 }
 
 .content__list-item:last-child {
@@ -244,10 +242,12 @@ input[type="checkbox"]:checked + span::before {
 }
 
 .content__list::-webkit-scrollbar {
-  display: none;
+  background-color: transparent;
 }
 
 .content__card-link {
+  inline-size: 100%;
+  block-size: 100%;
   display: block;
   margin: 2px;
   color: #fff;
@@ -275,16 +275,13 @@ input[type="checkbox"]:checked + span::before {
   justify-content: space-between;
   align-items: start;
   padding: 2px;
-  block-size: 100%;
-  inline-size: 400px;
 }
 
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  block-size: 100%;
-  inline-size: 100%;
+  flex-grow: 1;
 }
 
 .content__video-card-title {
@@ -306,8 +303,8 @@ input[type="checkbox"]:checked + span::before {
 }
 
 .content__video-card-thumbnail {
-  object-fit: cover;
-  inline-size: 96%;
+  inline-size: 194px;
   block-size: 103px;
+  object-fit: cover;
   object-position: center;
 }
